@@ -29,5 +29,10 @@ export const useSort = (data) => {
 		}
 		setSortedColumnField({ key, order });
 	};
-	return { data: sorted_data, sortOrder };
+
+	const getOrder = () => {
+		console.log(sorted_column_info);
+		return { ...sorted_column_info };
+	};
+	return { data: sorted_data, sortOrder, getOrder };
 };
