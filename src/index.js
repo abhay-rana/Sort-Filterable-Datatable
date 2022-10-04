@@ -6,14 +6,12 @@ import "./styles/global.css";
 import App from "./app";
 
 import ModalProvider from "./provider/portal-provider";
-// import Check from "./check";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<>
 		<ModalProvider>
 			<App />
-			{/* <Check /> */}
 		</ModalProvider>
 	</>
 );
