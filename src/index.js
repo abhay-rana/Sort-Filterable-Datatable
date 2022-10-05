@@ -5,13 +5,9 @@ import "./styles/global.css";
 
 import App from "./app";
 
-import ModalProvider from "./provider/portal-provider";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<>
-		<ModalProvider>
-			<App />
-		</ModalProvider>
+		<App />
 	</>
 );
