@@ -1,9 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Header from "../components/header";
 import ProductListTable from "../components/product-list-table";
-
-import { data_set } from "../scripts/data-set";
 
 const Home = (props) => {
 	return (
@@ -21,7 +20,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	Product_List_Set_Data: () => dispatch({ type: "" }),
+	Product_List_Set_Data: (data) => dispatch({ type: "", data: data }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
