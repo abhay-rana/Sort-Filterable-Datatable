@@ -7,14 +7,14 @@ export const data_set = [
 		key: "545",
 	},
 	{
-		name: "surya kant",
+		name: "abhay2",
 		price: "500",
 		color: "green",
 		category: "laptop",
 		key: "123",
 	},
 	{
-		name: "rahul",
+		name: "abhay3",
 		price: "500",
 		color: "armenda",
 		category: "laptop",

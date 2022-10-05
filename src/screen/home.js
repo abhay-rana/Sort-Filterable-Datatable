@@ -16,11 +16,11 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-	data: state.product_store.data,
+	data: state.product_list_store.data,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	Product_List_Set_Data: (data) => dispatch({ type: "", data: data }),
+	Product_List_Set_Data: (data) => dispatch({ type: "SET_SORTED_DATA", data: data }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

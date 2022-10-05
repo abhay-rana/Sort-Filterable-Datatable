@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-export const useSort = (data) => {
+export const useSort = (data, setProductListDta) => {
 	const [sorted_column_info, setSortedColumnField] = useState({ key: "", order: "" });
 
 	//memoize the sorting function so that the component re-renders so the function will not fires again and compute
@@ -19,8 +19,8 @@ export const useSort = (data) => {
 			});
 		}
 
-		return sorted_products;
-	}, [sorted_column_info, data]);
+		setProductListDta(sorted_products);
+	}, [sorted_column_info]);
 
 	const sortOrder = (key) => {
 		let order = "ascending";

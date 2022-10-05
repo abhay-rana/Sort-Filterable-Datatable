@@ -7,9 +7,9 @@ import Button from "./common/button";
 
 import { useSort } from "../scripts/useSort";
 
-const ProductListTable = ({ product_list }) => {
+const ProductListTable = ({ product_list, setProductListData }) => {
 	//useSort is a custom hook for the sorting of the data tables
-	const { data, sortOrder, getOrder } = useSort(product_list);
+	const { sortOrder, getOrder } = useSort(product_list, setProductListData);
 
 	return (
 		<>
@@ -55,7 +55,7 @@ const ProductListTable = ({ product_list }) => {
 						</tr>
 					</thead>
 					<tbody>
-						{data.map((el, i) => {
+						{product_list.map((el, i) => {
 							return (
 								<React.Fragment key={el.key}>
 									<tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
