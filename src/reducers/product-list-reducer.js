@@ -29,11 +29,11 @@ export const ProductListReducer = (state = INITIAL_STATE, action) => {
 	}
 	if (action.type === "DELETE_PRODUCT_LIST_DATA") {
 		newState.data = state.data.filter((el) => (el.key !== action.data.key ? el : null));
-		console.log(newState);
+
 		return newState;
 	}
 	if (action.type === "PRODUCT_LIST_ADD_EDIT_DETAILS") {
-		newState.data = [...state.data, state.edit_product];
+		newState.data = [...state.data, { ...state.edit_product, key: Date.now() }];
 		console.log(newState.data);
 		return newState;
 	}

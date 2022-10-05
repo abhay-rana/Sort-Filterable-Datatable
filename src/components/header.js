@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+
 import { useLocation } from "wouter";
 
 import Button from "./common/button";
@@ -8,6 +9,7 @@ const Header = () => {
 	const addEditProduct = () => {
 		setLocation("/add-edit");
 	};
+
 	return (
 		<>
 			<div className="flex border-2 border-red-200 justify-around mb-4">

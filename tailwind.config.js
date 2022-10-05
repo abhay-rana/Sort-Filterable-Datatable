@@ -23,7 +23,7 @@ module.exports = {
 				},
 				custom: {
 					background: "#F2F7F9",
-					foreground: "var(--foreground)", 
+					foreground: "var(--foreground)",
 				},
 			},
 			padding: {
