@@ -33,7 +33,14 @@ export const ProductListReducer = (state = INITIAL_STATE, action) => {
 		return newState;
 	}
 	if (action.type === "PRODUCT_LIST_ADD_EDIT_DETAILS") {
-		newState.data = [...state.data, { ...state.edit_product, key: Date.now() }];
+		if (!!state.edit_product.key) {
+			//if the key is present in the edit_product it means we are editing the data
+			newState.data = state.data.map((el) => (el.key !== state.edit_product.key ? el : state.edit_product));
+		} else {
+			//if the key is not present so we are appending the new product
+			newState.data = [...state.data, { ...state.edit_product, key: Date.now() }];
+		}
+
 		console.log(newState.data);
 		return newState;
 	}

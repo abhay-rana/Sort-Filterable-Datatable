@@ -30,7 +30,7 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 					<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 						<tr>
 							<th scope="col" className="py-3 px-6 ">
-								<Button onClick={() => sortOrder("name")} className="w-[150px] hover:bg-blue-300">
+								<Button onClick={() => sortOrder("name")} className="w-[150px] bg-gray-300 hover:bg-blue-300">
 									<div className="flex">
 										{getOrder().key === "name" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
 										Product name
@@ -38,7 +38,7 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 								</Button>
 							</th>
 							<th scope="col" className="py-3 px-6">
-								<Button onClick={() => sortOrder("cost_price")} className="w-[150px] hover:bg-blue-300">
+								<Button onClick={() => sortOrder("cost_price")} className="w-[150px] bg-gray-300 hover:bg-blue-300">
 									<div className="flex	">
 										{getOrder().key === "cost_price" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
 										Cost Price
@@ -46,7 +46,7 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 								</Button>
 							</th>
 							<th scope="col" className="py-3 px-6">
-								<Button onClick={() => sortOrder("category")} className="w-[150px] hover:bg-blue-300">
+								<Button onClick={() => sortOrder("category")} className="w-[150px] bg-gray-300 hover:bg-blue-300">
 									<div className="flex">
 										{getOrder().key === "category" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
 										Category
@@ -54,7 +54,7 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 								</Button>
 							</th>
 							<th scope="col" className="py-3 px-6">
-								<Button onClick={() => sortOrder("discount")} className="w-[150px] hover:bg-blue-300">
+								<Button onClick={() => sortOrder("discount")} className="w-[150px] bg-gray-300 hover:bg-blue-300">
 									<div className="flex">
 										{getOrder().key === "discount" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
 										Discount

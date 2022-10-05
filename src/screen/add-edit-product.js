@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+
+import { ReactComponent as BackArrow } from "../assets/back.svg";
+
 import Button from "../components/common/button";
 import Input from "../components/common/input";
 
@@ -12,11 +15,24 @@ const AddEditProduct = (props) => {
 		};
 	}, []);
 
+	const saveProduct = () => {
+		alert("do you want to save this");
+		props.Product_List_Add_Edit_Details();
+	};
+
+	const goBack = () => {
+		window.history.back();
+	};
+
 	return (
 		<>
-			{console.log("props", props.add_edit_data)}
 			<div>
-				<div className="flex border-2 border-red-100 justify-center text-xl">{props.add_edit_data ? "Edit Product" : "Add Product"}</div>
+				<div className="flex border-2 border-red-100 justify-center text-xl">
+					<div onClick={goBack} className={"absolute left-10"}>
+						<BackArrow height={25} width={25} />
+					</div>
+					<div>{props.add_edit_data ? "Edit Product" : "Add Product"}</div>
+				</div>
 				<div className="m-4 ">
 					<div className="p-4">
 						<Input
@@ -97,7 +113,7 @@ const AddEditProduct = (props) => {
 					</div>
 				</div>
 				<div className="flex border-2 border-red-200 justify-center">
-					<Button onClick={props.Product_List_Add_Edit_Details} className={"bg-success text-white w-[100px]"}>
+					<Button onClick={saveProduct} className={"bg-success text-white w-[100px]"}>
 						Save
 					</Button>
 				</div>
