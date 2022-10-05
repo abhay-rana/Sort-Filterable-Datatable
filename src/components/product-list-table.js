@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "wouter";
 
 import { ReactComponent as UpSvg } from "../assets/up.svg";
 import { ReactComponent as DownSvg } from "../assets/down.svg";
@@ -7,9 +8,20 @@ import Button from "./common/button";
 
 import { useSort } from "../scripts/useSort";
 
-const ProductListTable = ({ product_list, setProductListData }) => {
+const ProductListTable = ({ product_list, setProductListData, editProductListData, deleteProductListData }) => {
+	const [location, setLocation] = useLocation();
+
 	//useSort is a custom hook for the sorting of the data tables
 	const { sortOrder, getOrder } = useSort(product_list, setProductListData);
+
+	const editProduct = (el) => {
+		editProductListData(el);
+		setLocation("/add-edit");
+	};
+
+	const deleteProduct = (el) => {
+		if (!!window.confirm("do you want to delete the modal")) deleteProductListData(el);
+	};
 
 	return (
 		<>
@@ -66,9 +78,12 @@ const ProductListTable = ({ product_list, setProductListData }) => {
 										<td className="py-4 px-6">{el.category}</td>
 										<td className="py-4 px-6">{el.price}</td>
 										<td className="py-4 px-6">
-											<a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+											<Button onClick={() => editProduct(el)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
 												Edit
-											</a>
+											</Button>
+											<Button onClick={() => deleteProduct(el)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+												Delete
+											</Button>
 										</td>
 									</tr>
 								</React.Fragment>
