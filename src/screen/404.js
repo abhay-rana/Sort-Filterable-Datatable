@@ -1,4 +1,4 @@
-import { ReactComponent as IssueSvg } from "~/svg/issue.svg";
+import { ReactComponent as IssueSvg } from "../assets/issue.svg";
 
 const PageNotFound = (props) => {
 	return (

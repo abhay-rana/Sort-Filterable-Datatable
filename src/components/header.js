@@ -10,9 +10,11 @@ const Header = () => {
 	};
 	return (
 		<>
-			<div className="flex">
-				<div>Product Lists</div>
-				<Button onClick={addEditProduct}>Add New Product</Button>
+			<div className="flex border-2 border-red-200 justify-around mb-4">
+				<div className="p-2 text-xl">Product Lists</div>
+				<Button onClick={addEditProduct} className="bg-orange-400 text-white hover:bg-warning">
+					Add New Product
+				</Button>
 			</div>
 		</>
 	);

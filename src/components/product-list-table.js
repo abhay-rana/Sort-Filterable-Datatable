@@ -38,10 +38,10 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 								</Button>
 							</th>
 							<th scope="col" className="py-3 px-6">
-								<Button onClick={() => sortOrder("color")} className="w-[150px] hover:bg-blue-300">
+								<Button onClick={() => sortOrder("cost_price")} className="w-[150px] hover:bg-blue-300">
 									<div className="flex	">
-										{getOrder().key === "color" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
-										Color
+										{getOrder().key === "cost_price" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
+										Cost Price
 									</div>
 								</Button>
 							</th>
@@ -54,10 +54,10 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 								</Button>
 							</th>
 							<th scope="col" className="py-3 px-6">
-								<Button onClick={() => sortOrder("price")} className="w-[150px] hover:bg-blue-300">
+								<Button onClick={() => sortOrder("discount")} className="w-[150px] hover:bg-blue-300">
 									<div className="flex">
-										{getOrder().key === "price" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
-										Price
+										{getOrder().key === "discount" ? getOrder().order === "ascending" ? <UpSvg height={20} /> : <DownSvg height={20} /> : null}
+										Discount
 									</div>
 								</Button>
 							</th>
@@ -74,9 +74,9 @@ const ProductListTable = ({ product_list, setProductListData, editProductListDat
 										<th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 											{el.name}
 										</th>
-										<td className="py-4 px-6">{el.color}</td>
+										<td className="py-4 px-6">{el.cost_price}</td>
 										<td className="py-4 px-6">{el.category}</td>
-										<td className="py-4 px-6">{el.price}</td>
+										<td className="py-4 px-6">{el.discount}</td>
 										<td className="py-4 px-6">
 											<Button onClick={() => editProduct(el)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
 												Edit

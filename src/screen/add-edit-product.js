@@ -84,14 +84,11 @@ const AddEditProduct = (props) => {
 					<div className="p-4">
 						<span className="mr-6">Category</span>
 						<select onChange={(e) => props.Product_List_Set_Details("category", e.target.value)}>
-							<option value="0">Laptop</option>
-							<option value="1">Mobile</option>
-							<option value="2">Electronics</option>
-							<option value="3">Desktops</option>
-							<option value="4">Graphics Card</option>
-							<option value="5">Friday</option>
-							<option value="6">Saturday</option>
-							<option value="7">Sunday</option>
+							<option value="Laptop">Laptop</option>
+							<option value="Mobile">Mobile</option>
+							<option value="Electronics">Electronics</option>
+							<option value="Desktops">Desktops</option>
+							<option value="Graphics Card">Graphics Card</option>
 						</select>
 					</div>
 					<div className="p-4 ">
